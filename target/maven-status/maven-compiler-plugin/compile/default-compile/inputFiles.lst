@@ -1,0 +1,9 @@
+/home/mizmauz/DEV/WORKSPACE/heureso_kyma/Step2_Quarkus_Rest_UI5/quarkus_kafka/src/main/java/com/heureso/events/Units.java
+/home/mizmauz/DEV/WORKSPACE/heureso_kyma/Step2_Quarkus_Rest_UI5/quarkus_kafka/src/main/java/com/heureso/mapping/MeterReadingMapper.java
+/home/mizmauz/DEV/WORKSPACE/heureso_kyma/Step2_Quarkus_Rest_UI5/quarkus_kafka/src/main/java/com/heureso/mapping/MeterReading.java
+/home/mizmauz/DEV/WORKSPACE/heureso_kyma/Step2_Quarkus_Rest_UI5/quarkus_kafka/src/main/java/com/heureso/entities/MeterReadingValueCache.java
+/home/mizmauz/DEV/WORKSPACE/heureso_kyma/Step2_Quarkus_Rest_UI5/quarkus_kafka/src/main/java/com/heureso/events/MeterReadingEventDeserializer.java
+/home/mizmauz/DEV/WORKSPACE/heureso_kyma/Step2_Quarkus_Rest_UI5/quarkus_kafka/src/main/java/com/heureso/events/Utils.java
+/home/mizmauz/DEV/WORKSPACE/heureso_kyma/Step2_Quarkus_Rest_UI5/quarkus_kafka/src/main/java/com/heureso/events/MeterReadingEvent.java
+/home/mizmauz/DEV/WORKSPACE/heureso_kyma/Step2_Quarkus_Rest_UI5/quarkus_kafka/src/main/java/com/heureso/entities/MeterReadingRepository.java
+/home/mizmauz/DEV/WORKSPACE/heureso_kyma/Step2_Quarkus_Rest_UI5/quarkus_kafka/src/main/java/com/heureso/boundaries/MeterReadingResource.java

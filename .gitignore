@@ -1,0 +1,14 @@
+.idea
+*.iml
+node_modules/
+frontend_reading/genv2
+http
+dist/
+.scp/
+.env
+Makefile*.mta
+mta_archives
+mta-*
+resources
+archive.zip
+.*_mta_build_tmp

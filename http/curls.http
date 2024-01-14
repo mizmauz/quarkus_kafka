@@ -1,0 +1,17 @@
+###
+POST http://localhost:10002/consumption/meterreading/create
+accept: */*
+Content-Type: application/json
+
+{
+    "id": "1800",
+    "meternumber": "ISK12346",
+    "reading_date": "2021-01-01",
+    "reading_time": "06:00:00",
+    "readingamount": "2500",
+    "readingreason": "TURNUS",
+    "readingsource": "CUSTOMER"
+}
+
+###
+GET http://localhost:10002/consumption/meterreading
