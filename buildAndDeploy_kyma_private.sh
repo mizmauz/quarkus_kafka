@@ -4,7 +4,7 @@ mvn clean package -DskipTests
 
 docker build -f src/main/docker/Dockerfile.jvm -t mizmauzdocker/quarkus_kafka:0.0.1 .
 
-docker login -u <docker_username> -p <docker_password> # !! Enter your own user here
+docker login -u mizmauzdocker -p dckr_pat_t7yz2HSO1K-4NUiBJRBldYybai8 # use own -u -p
 docker push mizmauzdocker/quarkus_kafka:0.0.1
 
 export KUBECONFIG="$HOME/.kube/config"

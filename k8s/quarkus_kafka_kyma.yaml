@@ -1,0 +1,117 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: quarkuskafka
+    version: "0.0.1"
+    bounded-context: heureso
+  name: quarkuskafka
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quarkuskafka
+  template:
+    metadata:
+      labels:
+        app: quarkuskafka
+    spec:
+      containers:
+        - name: quarkuskafka
+          image: mizmauzdocker/quarkus_kafka:0.0.1
+          imagePullPolicy: Always
+          env:
+            - name: QUARKUS_LOG_LEVEL
+              value: INFO
+            - name: QUARKUS_OPENTELEMETRY_TRACER_EXPORTER_OTLP_ENDPOINT
+              value: http://grafana-agent.observability.svc.cluster.local:4317
+            - name: KAFKA_BOOTSTRAP_SERVERS
+              value: kafka:29092
+            - name: QUARKUS_DATASOURCE_JDBC_URL
+              value: jdbc:postgresql://postgres:5432/postgres
+            - name: QUARKUS_DATASOURCE_USERNAME
+              value: admin
+            - name: QUARKUS_DATASOURCE_PASSWORD
+              value: admin
+          ports:
+            - containerPort: 9999
+          resources:
+            limits:
+              cpu: 500m
+              memory: 1Gi
+            requests:
+              cpu: 125m
+              memory: 250Mi
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: quarkuskafka
+    bounded-context: heureso
+  name: quarkuskafka
+  namespace: default
+spec:
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 9999
+      name: web
+  selector:
+    app: quarkuskafka
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: quarkuskafka
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    ingress.kubernetes.io/ssl-redirect: "false"
+#    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: localhost
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/quarkuskafka"
+            backend:
+              service:
+                name: quarkuskafka
+                port:
+                  number: 8080
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    app: quarkuskafka
+    bounded-context: heureso
+    domain: electric-utilities
+    git.repository: quarkuskafka
+  name: quarkuskafka
+  namespace: default
+spec:
+  endpoints:
+    - path: /quarkuskafka/q/metrics
+      port: "8080"
+  selector:
+    matchLabels:
+      app: quarkuskafka
+#      relabelings:
+#        - action: replace
+#          sourceLabels:
+#            - __meta_kubernetes_service_label_domain
+#          targetLabel: domain
+#        - action: replace
+#          sourceLabels:
+#            - __meta_kubernetes_service_label_bounded_context
+#          targetLabel: bounded_context
+#        - action: replace
+#          sourceLabels:
+#            - __meta_kubernetes_service_label_subdomain
+#          targetLabel: sub_domain
+#      scheme: HTTP

@@ -89,12 +89,6 @@ public class MeterReadingResource
         OutgoingKafkaRecordMetadata<?> metadata = OutgoingKafkaRecordMetadata.builder()
             .withKey( String.valueOf(meterreading.id ))
             .build();
-//        meterReadingCreationEmitter.send(Message.of(meterreading).addMetadata(metadata)).withAck(
-//            () ->
-//            {
-//                return CompletableFuture.completedFuture(null);
-//            }
-//        );
 
         return meterReadingCreationEmitter.sendMessage(
             Message.of( meterreading )

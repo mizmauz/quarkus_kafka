@@ -7,6 +7,7 @@ com/heureso/mapping/MeterReadingMapper.class
 com/heureso/entities/MeterReadingValueCache.class
 com/heureso/events/MeterReadingEventDeserializer.class
 com/heureso/mapping/MeterReadingMapperImpl.class
+com/heureso/boundaries/CreationProcessorCache.class
 com/heureso/events/Units$ErrorCode.class
 com/heureso/mapping/MeterReading.class
 com/heureso/events/Units.class
