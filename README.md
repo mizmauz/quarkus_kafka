@@ -4,7 +4,8 @@ A Kafka processor receives the incoming messages and answers with an outgoing me
 
 Please see the blog for installing the prerequisites: [Setup KYMA, Kafka, Postgres, Redis](https://blogs.sap.com/2024/01/09/installing-kafka-and-postgres-on-kyma/)
 
-![Drawing](quarkus_kafka.png)
+## Github
+Code is available from Github Repository: [Github](https://github.com/mizmauz/quarkus_kafka)
 
 ## Run in Dev or Prod
 - [Running Quarkus in DEV mode](README_QUARKUS.md)
@@ -12,13 +13,12 @@ Please see the blog for installing the prerequisites: [Setup KYMA, Kafka, Postgr
   - <span style="color: red;">Beforehand update the Docker Account in buildAndDeploy_kyma.sh, line 7</span>.
   - Forward Port 8080 to local host to test REST
 
-
 ## Components of quarkus_kafka application
 
+![Drawing](quarkus_kafka.png)
 ### *Postgres, DB entities*
   - At startup, the initial script is executed: /src/main/ressource/import.sql
   - Hibernate Object: [com.heureso.entities.MeterReading.java](./src/main/java/com/heureso/entities/MeterReading.java)
-
 
 ### *REST Interface and outgoing Kafka Message*
 Receveing the post and preparing outgoing Kafka Message (METERREADING_OUT).
