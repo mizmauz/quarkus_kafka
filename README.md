@@ -74,4 +74,7 @@ Handling the Kafka Message (METERREADING_IN), storing in Redis Cache.
         Optional<IncomingKafkaRecordMetadata> incomingKafkaRecordMetadata = meterreadingmessage.getMetadata(IncomingKafkaRecordMetadata.class);
 ```
 
+## Testing REST and checking KAFKA messages 
+Test the REST using the [http curls](http/curls.http)
 
+After successfully transmitting a POST call, the KAFKA messages should be visible in the AKHQ interface, as described in the first blog.
