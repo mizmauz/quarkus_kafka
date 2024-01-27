@@ -1,7 +1,7 @@
 package com.heureso.boundaries;
 
 import com.heureso.events.MeterReadingEvent;
-import com.heureso.mapping.MeterReading;
+import com.heureso.entities.MeterReading;
 import com.heureso.mapping.MeterReadingMapper;
 import io.smallrye.mutiny.Uni;
 import io.smallrye.reactive.messaging.kafka.api.IncomingKafkaRecordMetadata;

@@ -1,6 +1,5 @@
 package com.heureso.entities;
 
-import com.heureso.mapping.MeterReading;
 import io.quarkus.redis.datasource.ReactiveRedisDataSource;
 import io.quarkus.redis.datasource.string.SetArgs;
 import io.quarkus.redis.datasource.value.ReactiveValueCommands;

@@ -1,5 +1,6 @@
 package com.heureso.mapping;
 
+import com.heureso.entities.MeterReading;
 import com.heureso.events.MeterReadingEvent;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;

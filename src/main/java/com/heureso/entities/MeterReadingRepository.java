@@ -1,6 +1,5 @@
 package com.heureso.entities;
 
-import com.heureso.mapping.MeterReading;
 import io.quarkus.hibernate.reactive.panache.PanacheRepository;
 import io.smallrye.mutiny.Uni;
 import jakarta.enterprise.context.ApplicationScoped;

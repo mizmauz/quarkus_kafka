@@ -1,4 +1,4 @@
-package com.heureso.mapping;
+package com.heureso.entities;
 
 
 import com.heureso.events.Units;

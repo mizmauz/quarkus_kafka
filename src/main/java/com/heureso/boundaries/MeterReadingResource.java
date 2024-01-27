@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.heureso.entities.MeterReadingRepository;
 import com.heureso.entities.MeterReadingValueCache;
 import com.heureso.events.Utils;
-import com.heureso.mapping.MeterReading;
+import com.heureso.entities.MeterReading;
 import io.opentelemetry.context.Context;
 import io.smallrye.mutiny.CompositeException;
 import io.smallrye.mutiny.Uni;
