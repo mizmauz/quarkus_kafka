@@ -19,18 +19,10 @@ import java.time.LocalTime;
 @NamedQuery(name = "MeterReading.findbyMeternumber", query = "SELECT r FROM MeterReading r WHERE r.meternumber = :meternumber ORDER BY r.reading_date desc, r.reading_time desc")
 @NamedQuery(name = "MeterReading.findAll", query = "SELECT r FROM MeterReading r ORDER BY r.reading_date desc, r.reading_time desc")
 
-//@Cacheable
 public class MeterReading extends PanacheEntityBase
 {
 
     @Id
-//    @SequenceGenerator(
-//           name ="meterreadingSequence",
-//           sequenceName = "meterreadingId_seq",
-//           allocationSize = 1,
-//           initialValue = 1
-//   )
-//    @GeneratedValue(strategy =GenerationType.SEQUENCE, generator = "meterreadingSequence")
     public Long id;
 
     @NotBlank(message="Meternumber may not be blank")

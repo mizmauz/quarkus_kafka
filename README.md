@@ -2,6 +2,8 @@
 Build a java application with a REST interface. The incoming rest call is forwarded as Kafka message.
 A Kafka processor receives the incoming messages and answers with an outgoing message.
 
+The use case is to meterreadings to a utilities company for billing electricity, a part of the **Meter to Cash process** known form SAP IS-U and Cloud for Utilities. 
+
 Please see the blog for installing the prerequisites: [Setup KYMA, Kafka, Postgres, Redis](https://blogs.sap.com/2024/01/09/installing-kafka-and-postgres-on-kyma/)
 
 ## Github
