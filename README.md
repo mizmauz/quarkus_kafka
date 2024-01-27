@@ -8,7 +8,7 @@ Please see the blog for installing the prerequisites: [Setup KYMA, Kafka, Postgr
 Code is available from Github Repository: [Github](https://github.com/mizmauz/quarkus_kafka)
 
 ## Run in Dev or Prod
-- [Running Quarkus in DEV mode](README_QUARKUS.md)
+- [Running Quarkus in DEV mode](README_QUARKUS.md), see README_QUARKUS
 - For productive deployment to KYMA cluster, run [buildAndDeploy_kyma.sh](buildAndDeploy_kyma.sh)
   - <span style="color: red;">Beforehand update the Docker Account in buildAndDeploy_kyma.sh, line 7</span>.
   - Forward Port 8080 to local host to test REST
@@ -71,3 +71,5 @@ Handling the Kafka Message (METERREADING_IN), storing in Redis Cache.
 
         Optional<IncomingKafkaRecordMetadata> incomingKafkaRecordMetadata = meterreadingmessage.getMetadata(IncomingKafkaRecordMetadata.class);
 ```
+
+
