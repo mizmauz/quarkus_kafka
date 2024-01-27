@@ -1,4 +1,5 @@
 buildAndDeploy_kyma_private.sh
+target/
 .idea/
 .mvn/
 *.iml
