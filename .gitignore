@@ -2,8 +2,6 @@ buildAndDeploy_kyma_private.sh
 .idea/
 .mvn/
 *.iml
-node_modules/
-frontend_reading/genv2
 http
 dist/
 .scp/
